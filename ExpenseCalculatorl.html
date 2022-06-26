@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseCalculator</title>
+    <link rel="stylesheet" href="/ExpenseCalculator/ExpenseCalculator.css">
+</head>
+
+<body>
+    <h1> Expense Tracker</h1>
+    <h2> Add a New Item:</h2>
+
+    <form class="container" onsubmit="AddRow(); return false;">
+        <input type="text" name="name" id="Name" placeholder="Name of Expense" required>
+        <input type="date" name="date" id="Date" required>
+        <input type="float" name="amount" id="Amount" placeholder="Expense cost" required>
+        <input type="submit" id="btn" value="Add Expense" />
+    </form>
+
+
+    <table id="show">
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Amount</th>
+        </tr>
+    </table>
+
+    <script>
+
+        function AddRow() {
+            var tbl = document.getElementById("show");
+            var row = tbl.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+            cell1.innerHTML = document.getElementById("Name").value;
+            cell2.innerHTML = document.getElementById("Date").value;
+            cell3.innerHTML = document.getElementById("Amount").value;
+
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
